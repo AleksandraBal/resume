@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleksandra Bal — Executive CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #2C4F73;
+            --accent-light: #5E81AC;
+            --charcoal: #1F2937;
+            --charcoal-light: #374151;
+            --warm-grey: #6B7280;
+            --light-cool: #F2F5F7;
+            --page-bg: #FAFAF8;
+            --white: #FFFFFF;
+            --border: #E5E7EB;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            background: var(--page-bg);
+            line-height: 1.7;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 72px;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 56px;
+            align-items: start;
+            padding-bottom: 72px;
+            margin-bottom: 72px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-text {
+            padding-top: 8px;
+        }
+
+        .hero-portrait {
+            width: 220px;
+            height: 275px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-family: 'IBM Plex Serif', Georgia, serif;
+            font-size: 64px;
+            font-weight: 500;
+            color: var(--charcoal);
+            letter-spacing: -1.5px;
+            margin-bottom: 6px;
+        }
+
+        .hero-contact {
+            font-size: 13.5px;
+            color: var(--warm-grey);
+            margin-bottom: 20px;
+        }
+
+        .hero-contact a {
+            color: var(--charcoal-light);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-contact .dot {
+            margin: 0 10px;
+            opacity: 0.4;
+        }
+
+        .hero-headline {
+            font-family: 'IBM Plex Serif', serif;
+            font-size: 21px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--charcoal-light);
+            max-width: 640px;
+            margin-bottom: 32px;
+        }
+
+        .hero-credentials {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 0.3px;
+            margin-bottom: 36px;
+            line-height: 1.9;
+        }
+
+        .hero-metrics {
+            display: flex;
+            align-items: baseline;
+            gap: 44px;
+            flex-wrap: wrap;
+        }
+
+        .metric {
+            text-align: left;
+        }
+
+        .metric-number {
+            font-family: 'IBM Plex Serif', serif;
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--charcoal);
+            line-height: 1.1;
+        }
+
+        .metric-label {
+            font-size: 11.5px;
+            font-weight: 500;
+            color: var(--warm-grey);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .hero-thought-leadership {
+            margin-top: 28px;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--warm-grey);
+            line-height: 1.7;
+            max-width: 520px;
+        }
+
+        /* ─── TWO-COLUMN LAYOUT ─── */
+        .content {
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            gap: 64px;
+        }
+
+        /* ─── LEFT COLUMN ─── */
+        .sidebar {
+            background: var(--light-cool);
+            border-radius: 8px;
+            padding: 36px 28px;
+            height: fit-content;
+        }
+
+        .section-title {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 48px;
+        }
+
+        .sidebar-section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ─── EXPERTISE CHIPS ─── */
+        .expertise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            display: inline-block;
+            padding: 5px 12px;
+            background: var(--white);
+            color: var(--charcoal-light);
+            border-radius: 4px;
+            font-size: 12.5px;
+            font-weight: 500;
+        }
+
+        /* ─── EDUCATION ─── */
+        .education-item {
+            margin-bottom: 11px;
+        }
+
+        .edu-degree {
+            font-weight: 500;
+            font-size: 13.5px;
+            color: var(--charcoal);
+        }
+
+        .edu-school {
+            font-size: 12.5px;
+            color: var(--warm-grey);
+            margin-top: 1px;
+        }
+
+        .edu-note {
+            font-size: 12px;
+            color: var(--accent);
+            margin-top: 1px;
+        }
+
+        /* ─── LANGUAGES ─── */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+
+        .language-level {
+            color: var(--warm-grey);
+            font-size: 13px;
+        }
+
+        /* ─── PUBLICATIONS ─── */
+        .publications-text {
+            font-size: 13.5px;
+            color: var(--charcoal-light);
+            line-height: 1.7;
+        }
+
+        .publications-text a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ─── RIGHT COLUMN — EXPERIENCE ─── */
+        .main-content {
+            padding-top: 4px;
+        }
+
+        .main-section-title {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 36px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 1.5px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 56px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29.5px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background: var(--page-bg);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+        }
+
+        .timeline-item.current::before {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        /* Visual weight hierarchy */
+        .timeline-item.primary .role-company {
+            font-size: 26px;
+        }
+
+        .timeline-item.primary .role-bullets li {
+            font-size: 16px;
+        }
+
+        .timeline-item.secondary .role-company {
+            font-size: 20px;
+        }
+
+        .timeline-item.secondary .role-bullets li {
+            font-size: 15px;
+        }
+
+        .timeline-item.tertiary .role-company {
+            font-size: 18px;
+        }
+
+        .timeline-item.tertiary .role-bullets li {
+            font-size: 14px;
+            color: var(--warm-grey);
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .role-company {
+            font-family: 'IBM Plex Serif', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .role-dates {
+            font-size: 13px;
+            color: var(--warm-grey);
+            font-weight: 400;
+        }
+
+        .role-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--charcoal-light);
+            margin-bottom: 4px;
+        }
+
+        .role-progression {
+            font-size: 13px;
+            color: var(--warm-grey);
+            font-style: italic;
+            margin-bottom: 14px;
+        }
+
+        .role-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .role-bullets li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 10px;
+            line-height: 1.8;
+            color: var(--charcoal-light);
+        }
+
+        .role-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 4px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 50%;
+        }
+
+        .role-bullets li strong {
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        /* ─── PRINT ─── */
+        @media print {
+            body { background: white; font-size: 14px; }
+            .page { padding: 40px; max-width: none; }
+            .sidebar { background: #F5F7F9; }
+            .hero h1 { font-size: 48px; }
+            .hero { gap: 32px; padding-bottom: 48px; margin-bottom: 48px; }
+            .hero-portrait { width: 140px; height: 175px; }
+        }
+
+        @media (max-width: 768px) {
+            .page { padding: 36px 24px; }
+            .hero { grid-template-columns: 1fr; gap: 32px; }
+            .hero-portrait { width: 140px; height: 175px; }
+            .content { grid-template-columns: 1fr; gap: 40px; }
+            .hero h1 { font-size: 40px; }
+            .hero-metrics { gap: 28px; }
+            .metric-number { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-text">
+                <h1>Aleksandra Bal</h1>
+                <div class="hero-contact">
+                    Leiden, Netherlands<span class="dot">&middot;</span><a href="mailto:aleksandra.bal@gmail.com">aleksandra.bal@gmail.com</a><span class="dot">&middot;</span><a href="https://www.linkedin.com/in/aleksandra-bal-13518965" target="_blank">LinkedIn</a>
+                </div>
+                <p class="hero-headline">Designing tax technology that enables global businesses to scale with confidence. Combining expertise in tax law, software engineering and AI, I build the tax infrastructure behind global commerce while contributing to the broader profession through more than 200 publications and regular speaking engagements on indirect tax technology and AI.</p>
+                <div class="hero-credentials">
+                    PhD in Taxation &nbsp;&middot;&nbsp; BSc Computer Science &nbsp;&middot;&nbsp; MSc Artificial Intelligence (in progress)
+                </div>
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <div class="metric-number">100+</div>
+                        <div class="metric-label">Countries</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">13,000+</div>
+                        <div class="metric-label">Jurisdictions</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">99.99%</div>
+                        <div class="metric-label">Accuracy</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-number">200+</div>
+                        <div class="metric-label">Publications</div>
+                    </div>
+                </div>
+            </div>
+            <img src="aleksandra_bal_photo.png" alt="Aleksandra Bal" class="hero-portrait">
+        </header>
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="content">
+            <!-- LEFT COLUMN -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="section-title">Core Expertise</div>
+                    <div class="expertise-grid">
+                        <span class="chip">Tax Technology</span>
+                        <span class="chip">Platform Architecture</span>
+                        <span class="chip">Product Leadership</span>
+                        <span class="chip">AI Strategy</span>
+                        <span class="chip">Tax Engines</span>
+                        <span class="chip">Global Team Leadership</span>
+                        <span class="chip">VAT / GST</span>
+                        <span class="chip">US Sales Tax</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="section-title">Education</div>
+                    <div class="education-item">
+                        <div class="edu-degree">MSc Applied Artificial Intelligence</div>
+                        <div class="edu-school">Eastern University</div>
+                        <div class="edu-note">In progress</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-degree">BSc Computer Science</div>
+                        <div class="edu-school">University of London, 2023</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-degree">PhD, Taxation</div>
+                        <div class="edu-school">Leiden University</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-degree">MBA</div>
+                        <div class="edu-school">Rotterdam School of Management, Erasmus</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="edu-degree">LLM, Int'l & European Tax Law</div>
+                        <div class="edu-school">Maastricht University</div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="section-title">Languages</div>
+                    <div class="language-item">
+                        <span>Polish</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                    <div class="language-item">
+                        <span>English</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Dutch</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span>German</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="section-title">Publications</div>
+                    <p class="publications-text">200+ publications on EU VAT, e-invoicing and tax technology. International conference speaker. Writes on tax and AI at <a href="https://taxengineer.substack.com">Tax Engineer</a>.</p>
+                </div>
+            </aside>
+
+            <!-- RIGHT COLUMN -->
+            <main class="main-content">
+                <div class="main-section-title">Career History</div>
+                <div class="timeline">
+                    <!-- Stripe — primary weight, ~60% of vertical space -->
+                    <div class="timeline-item current primary">
+                        <div class="role-header">
+                            <span class="role-company">Stripe</span>
+                            <span class="role-dates">March 2021 – Present</span>
+                        </div>
+                        <div class="role-title">Indirect Tax Technology Lead & Team Manager (Global & US)</div>
+                        <div class="role-progression">Progressed from Indirect Tax Technology Lead; global mandate 2023, US added 2025</div>
+                        <ul class="role-bullets">
+                            <li>Designed and scaled the tax engine now supporting <strong>100 countries and 13,000+ US jurisdictions at 99.99% calculation accuracy</strong>, operating across hundreds of billions in annual payment volume.</li>
+                            <li>Built and lead a global team of ten owning indirect tax determination across VAT, GST and US sales tax, delivering continuous accuracy gains year over year.</li>
+                            <li>Embedded indirect tax determination into Stripe's product architecture through close partnership with engineering and product, making compliance an inherent platform capability rather than a process layered on top.</li>
+                            <li>Drove regulatory readiness across multiple jurisdictions, ensuring product launches meet compliance requirements from day one through proactive tax guidance and workflow automation.</li>
+                            <li>Established Stripe's external voice on indirect tax technology and AI through 200+ publications, international conference speaking, and industry collaboration.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Vertex — secondary -->
+                    <div class="timeline-item secondary">
+                        <div class="role-header">
+                            <span class="role-company">Vertex Inc.</span>
+                            <span class="role-dates">Dec 2018 – Mar 2021</span>
+                        </div>
+                        <div class="role-title">Senior Product Manager, Global Indirect Tax Reporting</div>
+                        <ul class="role-bullets">
+                            <li>Took a new global indirect tax reporting solution from concept to implementation; owned roadmap and go-to-market strategy.</li>
+                            <li>Served as global indirect tax subject matter expert to product and engineering, and as voice of the customer shaping product design.</li>
+                        </ul>
+                    </div>
+
+                    <!-- IBFD — secondary -->
+                    <div class="timeline-item secondary">
+                        <div class="role-header">
+                            <span class="role-company">IBFD</span>
+                            <span class="role-dates">Jun 2011 – Nov 2018</span>
+                        </div>
+                        <div class="role-title">Tax Manager</div>
+                        <div class="role-progression">Progressed from Indirect Tax Specialist → Senior Tax Specialist → Tax Manager</div>
+                        <ul class="role-bullets">
+                            <li>Managed an international team of tax specialists; led digital transformation initiatives and product strategy for a digital tax platform.</li>
+                            <li>Engaged governments, policy leaders and academia on indirect tax policy; led EU VAT research programmes.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Deloitte — tertiary -->
+                    <div class="timeline-item tertiary">
+                        <div class="role-header">
+                            <span class="role-company">Deloitte</span>
+                            <span class="role-dates">2010 – 2011</span>
+                        </div>
+                        <div class="role-title">Indirect Tax Consultant, Berlin</div>
+                        <ul class="role-bullets">
+                            <li>VAT advisory and compliance for e-commerce and real estate clients across Germany, the Netherlands, Spain, the UK and the US.</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
